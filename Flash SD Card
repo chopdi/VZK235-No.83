@@ -8,3 +8,8 @@ Q
 make
 systemctl stop klipper
 ~/klipper/scripts/flash-sdcard.sh /dev/ttyACM0 fly-super8
+
+
+ST32407
+Bootloader 32kbit
+clock 8hz
