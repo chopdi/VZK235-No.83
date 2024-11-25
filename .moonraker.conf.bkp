@@ -47,16 +47,6 @@ channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
-[update_manager Klippain-ShakeTune]
-type = git_repo
-origin = https://github.com/Frix-x/klippain-shaketune.git
-path = ~/klippain_shaketune
-virtualenv = ~/klippain_shaketune-env
-requirements = requirements.txt
-system_dependencies = system-dependencies.json
-primary_branch = main
-managed_services = klipper
-
 [update_manager beacon]
 type = git_repo
 channel = dev
@@ -92,14 +82,15 @@ path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
 
-[update_manager klipper_tmc_autotune]
+[update_manager Klippain-ShakeTune]
 type = git_repo
-channel = dev
-path = ~/klipper_tmc_autotune
-origin = https://github.com/andrewmcgr/klipper_tmc_autotune.git
-managed_services = klipper
+origin = https://github.com/Frix-x/klippain-shaketune.git
+path = ~/klippain_shaketune
+virtualenv = ~/klippy-env
+requirements = requirements.txt
+system_dependencies = system-dependencies.json
 primary_branch = main
-install_script = install.sh
+managed_services = klipper
 
 [update_manager Klipper-Adaptive-Meshing-Purging]
 type = git_repo
@@ -115,4 +106,12 @@ path = /home/pi/motors-sync
 origin = https://github.com/MRX8024/motors-sync.git
 primary_branch = main
 managed_services = klipper
+
+[update_manager afc-software]
+type = git_repo
+path = ~/AFC-Klipper-Add-On
+origin = https://github.com/ArmoredTurtle/AFC-Klipper-Add-On.git
+managed_services = klipper moonraker
+primary_branch = main
+install_script = install-afc.sh
 
